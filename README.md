@@ -1,10 +1,10 @@
-# Password-Locker
+# Password Locker
 
 # Author 
 [Victoria Beryl](https://github.com/Victoria045)
 
 ## Description
-Password locker is an application that helps in management of passwords and even generates new passwords.
+Password locker is an application that generates new passwords and helps in the management of passwords for various accounts.
 
 ## Setup/Installation Requirements
 * Open Terminal

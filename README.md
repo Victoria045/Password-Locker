@@ -1,7 +1,7 @@
 # Password Locker
 
 # Author 
-[Victoria Beryl](https://github.com/Victoria045)
+Built by: [Victoria Beryl](https://github.com/Victoria045)
 
 ## Description
 Password locker is an application that generates new passwords and helps in the management of passwords for various accounts.

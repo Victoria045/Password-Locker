@@ -15,7 +15,18 @@ class TestContact(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("Twitter","Victoria045","x354yrz21") # create user object
+        self.new_credential = Credentials("Twitter","Victoria045","x354yrz21") # create user object
+
+
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_credential.account_name,"Twitter")
+        self.assertEqual(self.new_credential.username,"Victoria045")
+        self.assertEqual(self.new_credential.password,"x354yrz21")
+
 
 
 if __name__ == '__main__':

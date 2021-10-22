@@ -43,3 +43,10 @@ class User:
             if user.account_name == account_name:
                  return user
         return False
+
+    @classmethod
+    def display_users(cls):
+        '''
+        method that returns the contact list
+        '''
+        return cls.user_list

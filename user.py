@@ -18,21 +18,6 @@ class User:
         User.user_list.append(self)
 
 
- # checking to see if user object actually exixts
-    def test_user_exists(self):
-        '''
-        test to check if we can return a Boolean  if we cannot find the user.
-        '''
-
-        self.new_user.save_contact()
-        test_user = User("instagram","Vee@123","*1@3#675") # new user
-        test_user.save_user()
-
-        user_exists = User.user_exist("0711223344")
-
-        self.assertTrue(user_exists)
-
-
     @classmethod
     def display_user(cls):
         return cls.user_list
@@ -42,6 +27,7 @@ class User:
         delete_user method deletes a  saved user from the list
         '''
         User.user_list.remove(self)
+
 
     @classmethod    
     def find_by_account_name(cls,account_name):
@@ -57,6 +43,22 @@ class User:
         for user in cls.user_list:
             if user.account_name == account_name:
                  return user
+        
+
+
+    @classmethod
+    def user_exist(cls,account_name):
+        '''
+        Method that checks if a user exists from the user list.
+        Args:
+            account_name: Account name to search if it exists
+        Returns :
+            Boolean: True or false depending if the user exists
+        '''
+        for user in cls.user_list:
+            if user.account_name == account_name:
+                    return True
+
         return False
 
 

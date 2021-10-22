@@ -10,3 +10,9 @@ class User:
         self.account_name = account_name
         self.username = username
         self.password = password
+
+    def save_details(self):
+        """
+        saves a new credential to the credentials list
+        """
+        Credentials.credentials_list.append(self)

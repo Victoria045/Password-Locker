@@ -79,6 +79,23 @@ class TestContact(unittest.TestCase):
             self.assertEqual(len(User.user_list),1)
 
 
+# Fifth test
+    def test_find_user_by_accont_name(self):
+        '''
+        test to check if we can find a user by account name and display information
+        '''
+
+        self.new_user.save_contact()
+        test_user = User("instagram","Vee@123","*1@3#675") # new contact
+        test_user.save_user()
+
+        found_user = USer.find_by_account_name("0711223344")
+
+        self.assertEqual(found_user.password,test_user.password)
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

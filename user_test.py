@@ -9,7 +9,23 @@ class TestContact(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
+    
+# First test <-- Testing if our objects are instantiated correctly-->
+    def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_user = User("Twitter","Victoria045","x354yrz21") # create user object
 
+
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_user.account_name,"Twitter")
+        self.assertEqual(self.new_user.username,"Victoria045")
+        self.assertEqual(self.new_user.password,"x354yrz21")
 
 
 

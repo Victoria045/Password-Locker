@@ -28,7 +28,7 @@ class TestContact(unittest.TestCase):
         self.assertEqual(self.new_user.password,"x354yrz21")
 
 
-# second test <-- calls save_contact method to the newly generated object-->
+# second test <-- calls save_user method to the newly generated object-->
     def test_save_user(self):
         '''
         test_save_user test case to test if the user object is saved into
@@ -36,6 +36,34 @@ class TestContact(unittest.TestCase):
         '''
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(User.user_list),1)
+
+
+# Third test <-- Helps us get accurate test results every time a new test case-->
+    def test_save_multiple_user(self):
+            '''
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
+            '''
+            self.new_user.save_user()
+            test_user = User("instagram","Vee@123","*1@3#675") # new user
+            test_user.save_user()
+            self.assertEqual(len(User.user_list),2)
+
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            User.user_list = []
+
+    def test_save_multiple_contact(self):
+            '''
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
+            '''
+            self.new_user.save_user()
+            test_user = User("instagram","Vee@123","*1@3#675") # new user
+            test_user.save_user()
+            self.assertEqual(len(User.user_list),2)
 
 
 

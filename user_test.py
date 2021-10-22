@@ -101,12 +101,21 @@ class TestContact(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("instagram","Vee@123","*1@3#675") # new contact
+        test_user = User("instagram","Vee@123","*1@3#675") # new user
         test_contact.save_contact()
 
         user_exists = User.user_exist("instagram")
 
         self.assertTrue(user_exists)
+
+
+# test to check if we receive the list of the saved contacts
+    def test_display_all_users(self):
+        '''
+        method that returns a list of all users saved
+        '''
+
+        self.assertEqual(User.display_users(),User.user_list)
 
 
 if __name__ == '__main__':

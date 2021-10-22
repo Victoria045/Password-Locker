@@ -9,7 +9,7 @@ class TestContact(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
-    
+
 # First test <-- Testing if our objects are instantiated correctly-->
     def setUp(self):
         '''
@@ -26,6 +26,16 @@ class TestContact(unittest.TestCase):
         self.assertEqual(self.new_user.account_name,"Twitter")
         self.assertEqual(self.new_user.username,"Victoria045")
         self.assertEqual(self.new_user.password,"x354yrz21")
+
+
+# second test <-- calls save_contact method to the newly generated object-->
+    def test_save_user(self):
+        '''
+        test_save_user test case to test if the user object is saved into
+         the user list
+        '''
+        self.new_user.save_user() # saving the new user
+        self.assertEqual(len(User.user_list),1)
 
 
 

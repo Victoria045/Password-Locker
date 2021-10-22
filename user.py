@@ -27,3 +27,19 @@ class User:
         delete_user method deletes a  saved user from the list
         '''
         User.user_list.remove(self)
+
+    @classmethod    
+    def find_by_account_name(cls,account_name):
+        '''
+        Method that takes in account name and returns credentials that matches that name if it exists.
+
+        Args:
+            name: Account name to search for
+        Returns :
+            Credentials of account that matches the name.
+        '''
+
+        for user in cls.user_list:
+            if user.account_name == account_name:
+                 return user
+        return False

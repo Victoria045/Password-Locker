@@ -89,12 +89,24 @@ class TestContact(unittest.TestCase):
         test_user = User("instagram","Vee@123","*1@3#675") # new contact
         test_user.save_user()
 
-        found_user = USer.find_by_account_name("0711223344")
+        found_user = USer.find_by_account_name("instagram")
 
         self.assertEqual(found_user.password,test_user.password)
 
 
+# checking to see if a user object actually exixts
+    def test_user_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the user.
+        '''
 
+        self.new_user.save_user()
+        test_user = User("instagram","Vee@123","*1@3#675") # new contact
+        test_contact.save_contact()
+
+        user_exists = User.user_exist("instagram")
+
+        self.assertTrue(user_exists)
 
 
 if __name__ == '__main__':

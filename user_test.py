@@ -85,11 +85,11 @@ class TestContact(unittest.TestCase):
         test to check if we can find a user by account name and display information
         '''
 
-        self.new_user.save_contact()
+        self.new_user.save_user()
         test_user = User("instagram","Vee@123","*1@3#675") # new contact
         test_user.save_user()
 
-        found_user = USer.find_by_account_name("instagram")
+        found_user = User.find_by_account_name("instagram")
 
         self.assertEqual(found_user.password,test_user.password)
 
@@ -102,14 +102,14 @@ class TestContact(unittest.TestCase):
 
         self.new_user.save_user()
         test_user = User("instagram","Vee@123","*1@3#675") # new user
-        test_contact.save_contact()
+        test_user.save_user()
 
         user_exists = User.user_exist("instagram")
 
         self.assertTrue(user_exists)
 
 
-# test to check if we receive the list of the saved contacts
+# test to check if we receive the list of the saved users
     def test_display_all_users(self):
         '''
         method that returns a list of all users saved

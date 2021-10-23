@@ -21,11 +21,11 @@ class Credentials:
         return existing_user
 
 
-    def __init__(self,account,userName, password):
+    def __init__(self,account_name,userName, password):
         """
         method that defines user account credentials to be stored
         """
-        self.account = account
+        self.account_name = account_name
         self.user_name = user_name
         self.password = password
 
@@ -41,3 +41,17 @@ class Credentials:
         delete_credentials method that deletes an account credentials from the credentials_list
         """
         Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def find_credential(cls, account_name):
+        """
+        Method that takes in a account_name and returns a credential that matches that account_name.
+
+        Args:
+            account_name: account_name to search for
+        Returns :
+            username and password of person that matches the number.
+        """
+        for credential in cls.credentials_list:
+            if credential.account_name == account_name:
+                return credential

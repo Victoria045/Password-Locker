@@ -35,3 +35,12 @@ class TestCredentials(unittest.TestCase):
         tearDown method that does clean up after each test case has run
         '''
         Credentials.credentials_list = []
+
+    def test_save_many_accounts(self):
+        '''
+        test to check if we can save multiple credentials objects to our credentials list
+        '''
+        self.new_credential.save_credentials()
+        test_credential = Credentials("Instagram","VeeB","x3wyt13s") 
+        test_credential.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)

@@ -45,6 +45,7 @@ class TestCredentials(unittest.TestCase):
         test_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
+# Fourth test
     def test_delete_credential(self):
         """
         test method to test if we can remove an account credentials from our credentials_list
@@ -55,3 +56,16 @@ class TestCredentials(unittest.TestCase):
 
         self.new_credential.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+
+# Fifth test
+    def test_find_credential(self):
+        """
+        test to check if we can find a credential entry by account name and display the details of the credential
+        """
+        self.new_credential.save_credentials()
+        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential.save_credentials()
+
+        the_credential = Credentials.find_credential("Twitter")
+
+        self.assertEqual(the_credential.account,test_credential.account)

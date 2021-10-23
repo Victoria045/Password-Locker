@@ -69,7 +69,7 @@ class Credentials:
 
         Args:
             account_name: account name to search if it exists
-            
+
         Returns :
             Boolean: True or false depending if the contact exists
 
@@ -78,3 +78,11 @@ class Credentials:
             if credential.account == account:
                 return True
         return False
+
+    @classmethod
+    def display_credentials(cls):
+        """
+        Method that returns all items in the credentials list
+
+        """
+        return cls.credentials_list

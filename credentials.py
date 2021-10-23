@@ -52,6 +52,12 @@ class Credentials:
         Returns :
             username and password of person that matches the number.
         """
+
         for credential in cls.credentials_list:
             if credential.account_name == account_name:
                 return credential
+
+    @classmethod
+    def copy_password(cls,account_name):
+        found_credentials = Credentials.find_credential(account_name)
+        pyperclip.copy(found_credentials.password)

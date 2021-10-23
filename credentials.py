@@ -19,3 +19,12 @@ class Credentials:
             if(user.username == username and user.password == password):
                     existing_user == user.username
         return existing_user
+
+
+    def __init__(self,account,userName, password):
+        """
+        method that defines user account credentials to be stored
+        """
+        self.account = account
+        self.user_name = user_name
+        self.password = password

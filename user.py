@@ -1,70 +1,19 @@
 class User:
     """
-    User class that generates new instances of users
+    Create User class that generates new instances of a user
+
     """
+    user_list = []
 
-    user_list = [] #Empty user list
-
-
-    def __init__(self, account_name, username, password):
-        self.account_name = account_name
+    def __init__(self, username, password):
+        """
+        method that defines the properties of a user
+        """
         self.username = username
         self.password = password
 
     def save_user(self):
         """
-        save_user method saves user objects into user_list
+        save_user method that saves a new user instace into the user list
         """
         User.user_list.append(self)
-
-
-    @classmethod
-    def display_user(cls):
-        return cls.user_list
-
-    def delete_user(self):
-        '''
-        delete_user method deletes a  saved user from the list
-        '''
-        User.user_list.remove(self)
-
-
-    @classmethod    
-    def find_by_account_name(cls,account_name):
-        '''
-        Method that takes in account name and returns credentials that matches that name if it exists.
-
-        Args:
-            name: Account name to search for
-        Returns :
-            Credentials of account that matches the name.
-        '''
-
-        for user in cls.user_list:
-            if user.account_name == account_name:
-                 return user
-        
-
-
-    @classmethod
-    def user_exist(cls,account_name):
-        '''
-        Method that checks if a user exists from the user list.
-        Args:
-            account_name: Account name to search if it exists
-        Returns :
-            Boolean: True or false depending if the user exists
-        '''
-        for user in cls.user_list:
-            if user.account_name == account_name:
-                    return True
-
-        return False
-
-
-    @classmethod
-    def display_users(cls):
-        '''
-        method that returns the contact list
-        '''
-        return cls.user_list

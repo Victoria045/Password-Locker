@@ -89,3 +89,11 @@ def generate_Password():
     '''
     random_password=Credentials.generatePassword()
     return random_password
+
+
+def copy_password(account_name):
+    """
+    A function that copies the password using the pyperclip framework
+    We import the framework then declare a function that copies the emails.
+    """
+    return Credentials.copy_password(account_name)

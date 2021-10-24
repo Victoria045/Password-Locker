@@ -59,3 +59,10 @@ def display_accounts_details():
     Function that returns all the saved credential.
     """
     return Credentials.display_credentials()
+
+def delete_credential(credentials):
+    """
+    Function to delete a Credentials from credentials list
+
+    """
+    credentials.delete_credentials()

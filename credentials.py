@@ -1,7 +1,7 @@
 import random
 import string
 import pyperclip
-import user from User
+from user import User
 
 class Credentials:
     """
@@ -9,26 +9,25 @@ class Credentials:
     """
     credentials_list = []
 
-
-    @classmethod
-    def verify_user(cls,username, password):
-        """
-        method to verify whether the user is in our user_list or not
-        """
-        existing_user = ""
-        for user in User.user_list:
-            if(user.username == username and user.password == password):
-                    existing_user == user.username
-        return existing_user
-
-
-    def __init__(self,account_name,userName, password):
+    def __init__(self,account_name,user_name, password):
         """
         method that defines user account credentials to be stored
         """
         self.account_name = account_name
         self.user_name = user_name
         self.password = password
+
+    @classmethod
+    def verify_user(cls,user_name, password):
+        """
+        method to verify whether the user is in our user_list or not
+        """
+        existing_user = ""
+        for user in User.user_list:
+            if(user.user_name == user_name and user.password == password):
+                    existing_user == user.user_name
+        return existing_user
+
 
     def save_credentials(self):
         """
@@ -64,7 +63,7 @@ class Credentials:
         pyperclip.copy(found_credentials.password)
 
     @classmethod
-    def if_credential_exist(cls, account):
+    def if_credential_exist(cls, account_name):
         """
         Method that checks if a credential exists from the credential list
 
@@ -76,7 +75,7 @@ class Credentials:
 
         """
         for credential in cls.credentials_list:
-            if credential.account == account:
+            if credential.account_name == account_name:
                 return True
         return False
 

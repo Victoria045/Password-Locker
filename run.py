@@ -81,3 +81,11 @@ def check_credendtials(account_name):
 
     """
     return Credentials.if_credential_exist(account_name)
+
+
+def generate_Password():
+    '''
+    generates a random password for the user.
+    '''
+    random_password=Credentials.generatePassword()
+    return random_password

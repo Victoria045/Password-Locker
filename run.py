@@ -32,3 +32,11 @@ def display_user():
     Function to display existing user
     """
     return User.display_user()
+
+def login_user(username,password):
+    """
+    function that checks whether a user exist and then logs in the user
+    """
+  
+    check_user = Credentials.verify_user(username,password)
+    return check_user

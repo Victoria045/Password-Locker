@@ -139,7 +139,7 @@ def main():
             print('\n')
 
     while True:
-        print('Use these short codes to continue:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n')
+        print('Use these short codes to continue:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n DD - Delete credential \n EX - Exit the application \n')
         short_code = input().lower().strip()
         if short_code == 'cc':
             print("Create A New Account Credential")
@@ -199,7 +199,7 @@ def main():
                 print('That Credential does not exist')
                 print('\n')
 
-        elif short_code == "d":
+        elif short_code == "dd":
             print('Enter the account name of the Credentials you want to delete')
             search_name = input().lower()
             if find_credential(search_name):

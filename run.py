@@ -33,9 +33,9 @@ def display_user():
     '''
     return User.display_user()
 
-def login_user(username,password):
+def signin_user(username,password):
     '''
-    function that checks whether a user exist and then logs in the user
+    function that checks whether a user exist and then signs in the user
     '''
   
     check_user = Credentials.verify_user(username,password)
@@ -128,14 +128,14 @@ def main():
         print ('\n')
 
     elif short_code == 'si':
-        print('*'*50)
+        print('*'*65)
         print('Please enter your Username and your Password to sign in:')
-        print('*' * 50)
+        print('*' * 65)
         username = input('Username: ')
         password = input('password: ')
         signin = signin_user(username,password)
         if signin_user == signin:
-            print(f'Hello {username}.Welcome To PassWord Locker')  
+            print(f'Hello {username}.Welcome To Password Locker')  
             print('\n')
 
     while True:

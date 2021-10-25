@@ -109,7 +109,7 @@ def main():
         while True:
             print('Please enter one of the following short codes to proceed...\n KP - To key in your own pasword:\n GP - To generate random Password')
             selected_password = input().strip()
-            if selected_password == 'tp' or selected_password == 'TP':
+            if selected_password == 'kp' or selected_password == 'KP':
                 password = input("Enter Password\n")
                 break
             elif selected_password == 'gp' or selected_password == 'GP':
@@ -165,7 +165,7 @@ def main():
             save_credentials(create_new_credential(account_name,user_name,password))
             print('*'*100)
             print('\n')
-            print(f'Account Credential for: {account_name}....  Username: {user_name}  Password:{password} created succesfully!!!')
+            print(f'Account Credential for: {account_name}....  Username: {user_name}  Password: {password} created succesfully!!!')
             print('\n')
             print('*'*100)
             print('\n')
@@ -204,7 +204,7 @@ def main():
             search_name = input().lower()
             if find_credential(search_name):
                 search_credential = find_credential(search_name)
-                print("~"*65)
+                print("*"*65)
                 search_credential.delete_credentials()
                 print('\n')
                 print(f'Your credentials for : {search_credential.account_name} successfully deleted!!!')

@@ -49,7 +49,7 @@ Behaviours the application implements for the user:
 |Create a new credential in the application| Enter ```CC```|Enter Account name, username, password<br>choose ```kp``` to key in your password or ```gp``` for the application to generate a password |
 |Display all stored credentials | Enter ```DC```|Displays a list of all stored credentials |
 |Find a stored credential based on account name|Enter ```FC```| Enter the Account Name you want to find for which returns the accountd details |
-|Delete an existing credential that you don't want anymore|Enter ```D```|Enter the account name of the Credentials you want to delete |
+|Delete an existing credential that you don't want anymore|Enter ```DD```|Enter the account name of the Credentials you want to delete |
 |Exit the application| Enter ```ex```| The application exits |
 
 ## Technologies Used

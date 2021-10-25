@@ -18,14 +18,14 @@ class Credentials:
         self.password = password
 
     @classmethod
-    def verify_user(cls,user_name, password):
+    def verify_user(cls,username, password):
         """
         method to verify whether the user is in our user_list or not
         """
         existing_user = ""
         for user in User.user_list:
-            if(user.user_name == user_name and user.password == password):
-                    existing_user == user.user_name
+            if(user.username == username and user.password == password):
+                    existing_user == user.username
         return existing_user
 
 

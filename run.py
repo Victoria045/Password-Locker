@@ -107,7 +107,7 @@ def main():
         print('*' * 50)
         username = input('Username: ')
         while True:
-            print('Please enter one of the following short codes to proceed...\n KP - To key in your own pasword:\n GP - To generate random Password')
+            print('Please enter one of the following short codes to continue...\n KP - To key in your own pasword\n GP - To generate a random Password')
             selected_password = input().strip()
             if selected_password == 'kp' or selected_password == 'KP':
                 password = input("Enter Password\n")

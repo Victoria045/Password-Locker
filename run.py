@@ -26,7 +26,11 @@ def save_user(user):
     Function to save a new user
     '''
     user.save_user()
-
+def authenticate_user(username, password):
+        """
+        method to authenticate user whether the user is in our user_list or not
+        """
+        return User.verify_user(username,password)
 def display_user():
     '''
     Function to display existing user
@@ -75,7 +79,7 @@ def find_credential(account_name):
     return Credentials.find_credential(account_name)
 
 
-def check_credendtials(account_name):
+def check_credentials(account_name):
     '''
     Function that check if a Credentials exists with that account name and return true or false
 
@@ -131,12 +135,21 @@ def main():
         print('*'*65)
         print('Please enter your Username and your Password to sign in:')
         print('*' * 65)
-        username = input('Username: ')
-        password = input('password: ')
-        signin = signin_user(username,password)
-        if signin_user == signin:
-            print(f'Hello {username}.Welcome To Password Locker')  
+        username_input = input('Username: ')
+        password_input = input('password: ')
+
+    while True:
+        print('Sign in to continue...')
+        username_input = input('Username: ')
+        password_input = input('password: ')
+        if authenticate_user(username_input,password_input):
+            print('You are successfully signed in!!!')  
             print('\n')
+            break
+            
+        else:
+            print('Invalid credentials! Please try again')
+        
 
     while True:
         print('Use these short codes to continue:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n DD - Delete credential \n EX - Exit the application \n')

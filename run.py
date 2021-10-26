@@ -52,7 +52,7 @@ def save_credentials(credentials):
     '''
     Function to save Credentials to the credentials list
     '''
-    credentials. save_credentials()
+    credentials.save_credentials()
 
 def display_accounts_details():
     '''
